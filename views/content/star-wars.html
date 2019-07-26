@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Star Wars FAQ</h2>
+  <div ng-if="!allCharacters" ng-hide="errLoading">
+    <h4 class="text-center">Loading ...</h4>
+  </div>
+  <div ng-show="errLoading">
+    <h4 class="text-center">{{ errLoading }}</h4>
+  </div>
+  <div ng-if="allCharacters && !errLoading">
+    <div class="questions">
+      <div class="question">
+        Difference between the youngest and oldest characters ?
+      </div>
+      <div class="answer">{{ diffCharacter }} Coruscant Solar cycle</div>
+    </div>
+    <div class="questions">
+      <div class="question">
+        Average height of Star Wars Characters is ?
+      </div>
+      <div class="answer">{{ avgHeight | number: 2 }}</div>
+    </div>
+    <div class="questions">
+      <div class="question">
+        Eye Colors
+      </div>
+      <div class="answer">
+        <table class="table table-striped" ng-if="eyeGroup">
+          <tr>
+            <th>#</th>
+            <th>Eye Colour</th>
+            <th>Count</th>
+          </tr>
+          <tr ng-repeat="(name,eye) in eyeGroup track by $index">
+            <td>{{ $index + 1 }}</td>
+            <td class="title-text">{{ name }}</td>
+            <td class="title-text">{{ eye.length }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

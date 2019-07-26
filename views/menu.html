@@ -1,0 +1,12 @@
+<li
+  ng-repeat="menu in navigation"
+  class="nav-item dropdown"
+  ng-class="{active:menu.classis == 'active' }"
+>
+  <a ui-sref="{{ menu.anchor }}" ng-if="menu.anchor" class="nav-link">{{
+    menu.name
+  }}</a>
+  <a href="{{ menu.link }}" ng-if="menu.link" class="nav-link">{{
+    menu.name
+  }}</a>
+</li>

@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Fizz Buzz</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th width="100px;">
+          #
+        </th>
+        <th>
+          Fizz Buzz
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="number in numbers">
+        <td>{{ number.number }}</td>
+        <td>
+          <span ng-if="!(number.fizz || number.buzz)">{{ number.number }}</span>
+          <span ng-if="number.fizz">Fizz</span
+          ><span ng-if="number.buzz">Buzz</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

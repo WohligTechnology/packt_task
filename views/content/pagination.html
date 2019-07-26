@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>
+        Star Wars Characters
+        <span class="small">(Total:{{ totalStarWarsCharacters }})</span>
+      </h2>
+    </div>
+    <div class="col-md-4">
+      <input
+        type="text"
+        ng-change="getStarWarsCharacters(searchText,'search')"
+        placeholder="Search Here..."
+        ng-model="searchText"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div ng-if="!starWarsCharacters" ng-hide="errLoading">
+    <h4 class="text-center">Loading ...</h4>
+  </div>
+  <div ng-show="errLoading">
+    <h4 class="text-center">{{ errLoading }}</h4>
+  </div>
+
+  <table class="table table-striped" ng-if="starWarsCharacters && !errLoading">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Eye Colour</th>
+    </tr>
+    <tr ng-repeat="character in starWarsCharacters track by $index">
+      <td>{{ $index + 1 + starWarsCharactersPageIndex }}</td>
+      <td>{{ character.name }}</td>
+      <td class="title-text">{{ character.eye_color }}</td>
+    </tr>
+  </table>
+
+  <ul
+    uib-pagination
+    total-items="totalStarWarsCharacters"
+    ng-model="starWarsCharactersPage"
+    ng-change="getStarWarsCharacters(starWarsCharactersPage,'pageChange')"
+  ></ul>
+</div>

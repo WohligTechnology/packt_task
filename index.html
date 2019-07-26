@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstapp">
+  <head ng-controller="headerctrl">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title ng-bind="'Pact Assignment | '+template.title">Pact Assignment</title>
+    <link rel="shortcut icon" href="img/favicon.png" />
+
+    <script>
+      var isproduction = false;
+    </script>
+
+    <script src="js/concat.js"></script>
+    <!--[if IE]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="repeated-item" ui-view></div>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>
