@@ -4,7 +4,7 @@
   "description": "pact-demo",
   "main": "gulpfile.js",
   "dependencies": {
-    "angular": "^1.7.8",
+    "angular": "^1.8.3",
     "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "^1.0.22",
     "async": "^3.1.0",
